@@ -1,47 +1,45 @@
 <template>
-  <div v-if="!signedIn">
+  <div v-if="!signedIn" class="p-grid">
+    <div class="p-col-4 p-offset-4">
 
-    <div class="p-d-flex p-jc-center">
-
-          <div class="card">
-            <h1 class="p-text-center">Login</h1>
-            <form>
-              <div class="p-field">
-                <div class="p-float-label p-input-icon-right">
-                  <i class="pi pi-envelope"/>
-                  <InputText id="name" v-model="username"/>
-                  <label for="name">EmailAdress*</label>
-                </div>
-              </div>
-
-              <div class="p-field">
-                <div class="p-float-label">
-                  <Password id="password" v-model="password" toggleMask>
-                    <template #header>
-                      <h6>Pick a password</h6>
-                    </template>
-                    <template #footer="sp">
-                      {{ sp.level }}
-                      <Divider/>
-                      <p class="p-mt-2">Suggestions</p>
-                      <ul class="p-pl-2 p-ml-2 p-mt-0" style="line-height: 1.5">
-                        <li>At least one lowercase</li>
-                        <li>At least one uppercase</li>
-                        <li>At least one numeric</li>
-                        <li>Minimum 8 characters</li>
-                      </ul>
-                    </template>
-                  </Password>
-                  <label for="password">Password*</label>
-                </div>
-              </div>
-              <Button type="submit" label="Submit" class="p-mt-2"/>
-            </form>
-
+      <div class="card p-jc-center">
+        <h1 class="p-text-center">Login</h1>
+        <form class="p-fluid">
+          <div class="p-field">
+            <div class="p-float-label p-input-icon-right">
+              <i class="pi pi-envelope"/>
+              <InputText id="name" v-model="username"/>
+              <label for="name">EmailAdress*</label>
+            </div>
           </div>
 
+          <div class="p-field">
+            <div class="p-float-label">
+              <Password id="password" v-model="password" toggleMask>
+                <template #header>
+                  <h6>Pick a password</h6>
+                </template>
+                <template #footer="sp">
+                  {{ sp.level }}
+                  <Divider/>
+                  <p class="p-mt-2">Suggestions</p>
+                  <ul class="p-pl-2 p-ml-2 p-mt-0" style="line-height: 1.5">
+                    <li>At least one lowercase</li>
+                    <li>At least one uppercase</li>
+                    <li>At least one numeric</li>
+                    <li>Minimum 8 characters</li>
+                  </ul>
+                </template>
+              </Password>
+              <label for="password">Password*</label>
+            </div>
+          </div>
+          <Button type="submit" label="Submit" class="p-mt-2"/>
+        </form>
+      </div>
     </div>
   </div>
+
 
   <div v-if="signedIn">
     <h1> logged in</h1>

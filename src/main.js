@@ -7,6 +7,7 @@ import 'primevue/resources/themes/arya-blue/theme.css';
 import 'primevue/resources/primevue.min.css';
 import 'primeicons/primeicons.css';
 import './assets/styles/base.css';
+import 'primeflex/primeflex.css';
 
 import {
   applyPolyfills,
