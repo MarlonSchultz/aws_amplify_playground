@@ -15,7 +15,7 @@
     "emailVerificationSubject": "Your verification code",
     "emailVerificationMessage": "Your verification code is {####}",
     "defaultPasswordPolicy": false,
-    "passwordPolicyMinLength": 82,
+    "passwordPolicyMinLength": 12,
     "passwordPolicyCharacters": [
         "Requires Lowercase",
         "Requires Numbers",
