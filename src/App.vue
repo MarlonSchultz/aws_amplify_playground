@@ -54,34 +54,33 @@ import InputText from "primevue/inputtext";
 import Password from 'primevue/password';
 import Button from 'primevue/button';
 import Divider from "primevue/divider";
+import {defineComponent} from 'vue'
 
-
-export default {
+export default defineComponent({
   name: 'app',
   data() {
     return {
       signedIn: false,
-      username: null,
-      password: null,
+      username: '',
+      password: '',
       value: 'Hello World'
     }
   },
   methods: {
     signIn() {
       Auth.signIn(this.username, this.password)
-          .then(this.signedIn = true)
+          .then(() => this.signedIn = true)
           .catch(err => console.log(err));
     },
 
     signOut() {
       Auth.signOut()
-          .then(this.signedIn = false)
+          .then(() => this.signedIn = false)
           .catch(err => console.log(err));
-      (this.username, this.password)
     }
   },
   components: {
     InputText, Password, Button, Divider
   }
-}
+})
 </script>
