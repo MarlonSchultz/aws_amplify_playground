@@ -1,10 +1,12 @@
 <template>
+
   <div v-if="!signedIn" class="p-grid">
+    <Login v-bind:signedIn="signedIn" />
     <div class="p-col-4 p-offset-4">
 
       <div class="card p-jc-center">
         <h1 class="p-text-center">Login</h1>
-        <form class="p-fluid">
+        <form class="p-fluid" v-on:submit.prevent>
           <div class="p-field">
             <div class="p-float-label p-input-icon-right">
               <i class="pi pi-envelope"/>
@@ -15,26 +17,11 @@
 
           <div class="p-field">
             <div class="p-float-label">
-              <Password id="password" v-model="password" toggleMask>
-                <template #header>
-                  <h6>Pick a password</h6>
-                </template>
-                <template #footer="sp">
-                  {{ sp.level }}
-                  <Divider/>
-                  <p class="p-mt-2">Suggestions</p>
-                  <ul class="p-pl-2 p-ml-2 p-mt-0" style="line-height: 1.5">
-                    <li>At least one lowercase</li>
-                    <li>At least one uppercase</li>
-                    <li>At least one numeric</li>
-                    <li>Minimum 8 characters</li>
-                  </ul>
-                </template>
-              </Password>
+              <Password id="password" v-model="password" toggleMask>   </Password>
               <label for="password">Password*</label>
             </div>
           </div>
-          <Button type="submit" label="Submit" class="p-mt-2"/>
+          <Button type="submit" @click="signIn" label="Submit" class="p-mt-2"/>
         </form>
       </div>
     </div>
@@ -53,8 +40,9 @@ import {Auth} from "aws-amplify"
 import InputText from "primevue/inputtext";
 import Password from 'primevue/password';
 import Button from 'primevue/button';
-import Divider from "primevue/divider";
-import {defineComponent} from 'vue'
+import {defineComponent} from 'vue';
+import Login from './components/user/Login.vue'
+
 
 export default defineComponent({
   name: 'app',
@@ -62,8 +50,7 @@ export default defineComponent({
     return {
       signedIn: false,
       username: '',
-      password: '',
-      value: 'Hello World'
+      password: ''
     }
   },
   methods: {
@@ -80,7 +67,10 @@ export default defineComponent({
     }
   },
   components: {
-    InputText, Password, Button, Divider
+    InputText,
+    Password,
+    Button,
+    Login
   }
 })
 </script>
