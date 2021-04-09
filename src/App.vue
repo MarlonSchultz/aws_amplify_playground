@@ -1,7 +1,6 @@
 <template>
 
-  <div v-if="!signedIn" class="p-grid">
-    <Login v-bind:signedIn="signedIn" />
+  <div v-if="!userIsSignedIn" class="p-grid">
     <div class="p-col-4 p-offset-4">
 
       <div class="card p-jc-center">
@@ -17,7 +16,7 @@
 
           <div class="p-field">
             <div class="p-float-label">
-              <Password id="password" v-model="password" toggleMask>   </Password>
+              <Password id="password" v-model="password" toggleMask></Password>
               <label for="password">Password*</label>
             </div>
           </div>
@@ -28,7 +27,7 @@
   </div>
 
 
-  <div v-if="signedIn">
+  <div v-if="userIsSignedIn">
     <h1> logged in</h1>
     <button @click="signOut"> SignOut</button>
   </div>
@@ -40,12 +39,15 @@ import {Auth} from "aws-amplify"
 import InputText from "primevue/inputtext";
 import Password from 'primevue/password';
 import Button from 'primevue/button';
-import {defineComponent} from 'vue';
-import Login from './components/user/Login.vue'
+import {Options, Vue} from "vue-class-component";
 
+@Options({
+  components: {
+    InputText,
+    Password,
+    Button
+  },
 
-export default defineComponent({
-  name: 'app',
   data() {
     return {
       signedIn: false,
@@ -53,24 +55,30 @@ export default defineComponent({
       password: ''
     }
   },
-  methods: {
-    signIn() {
-      Auth.signIn(this.username, this.password)
-          .then(() => this.signedIn = true)
-          .catch(err => console.log(err));
-    },
-
-    signOut() {
-      Auth.signOut()
-          .then(() => this.signedIn = false)
-          .catch(err => console.log(err));
-    }
-  },
-  components: {
-    InputText,
-    Password,
-    Button,
-    Login
-  }
 })
+
+export default class App extends Vue {
+
+  username: string = '';
+  password: string = '';
+  userIsSignedIn: boolean = false
+
+  signIn = async () => {
+    try {
+      await Auth.signIn(this.username, this.password);
+      this.userIsSignedIn = true;
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  signOut = async () => {
+    try {
+      await Auth.signOut();
+      this.userIsSignedIn = false;
+    } catch (err) {
+      console.log(err);
+    }
+  }
+}
 </script>
