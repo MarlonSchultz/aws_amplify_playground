@@ -3,7 +3,7 @@ import App from './App.vue'
 import Amplify from 'aws-amplify';
 import aws_exports from './aws-exports';
 
-import 'primevue/resources/themes/arya-blue/theme.css';
+import 'primevue/resources/themes/mdc-dark-deeppurple/theme.css';
 import 'primevue/resources/primevue.min.css';
 import 'primeicons/primeicons.css';
 import './assets/styles/base.css';
