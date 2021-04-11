@@ -1,0 +1,11 @@
+{
+  "AppSyncApiName": "imageUploader",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthCognitoUserPoolId": {
+    "Fn::GetAtt": [
+      "authamplifye75e32b0",
+      "Outputs.UserPoolId"
+    ]
+  }
+}
