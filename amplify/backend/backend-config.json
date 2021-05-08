@@ -8,7 +8,7 @@
     }
   },
   "api": {
-    "imageUploader": {
+    "osint": {
       "service": "AppSync",
       "providerPlugin": "awscloudformation",
       "output": {

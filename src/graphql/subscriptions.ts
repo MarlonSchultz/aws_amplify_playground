@@ -2,9 +2,9 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const onCreateCategory = /* GraphQL */ `
-  subscription OnCreateCategory {
-    onCreateCategory {
+export const onCreateTarget = /* GraphQL */ `
+  subscription OnCreateTarget {
+    onCreateTarget {
       id
       name
       description
@@ -13,9 +13,9 @@ export const onCreateCategory = /* GraphQL */ `
     }
   }
 `;
-export const onUpdateCategory = /* GraphQL */ `
-  subscription OnUpdateCategory {
-    onUpdateCategory {
+export const onUpdateTarget = /* GraphQL */ `
+  subscription OnUpdateTarget {
+    onUpdateTarget {
       id
       name
       description
@@ -24,9 +24,9 @@ export const onUpdateCategory = /* GraphQL */ `
     }
   }
 `;
-export const onDeleteCategory = /* GraphQL */ `
-  subscription OnDeleteCategory {
-    onDeleteCategory {
+export const onDeleteTarget = /* GraphQL */ `
+  subscription OnDeleteTarget {
+    onDeleteTarget {
       id
       name
       description

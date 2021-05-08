@@ -30,16 +30,20 @@
   <div v-if="userIsSignedIn">
     <h1> logged in</h1>
     <button @click="signOut"> SignOut</button>
+    <button @click="getTargets"> getTargets</button>
+    <button @click="addTarget"> addTarget</button>
   </div>
 
 </template>
 
 <script lang="ts">
-import {Auth} from "aws-amplify"
+import {Auth, API, graphqlOperation} from "aws-amplify"
 import InputText from "primevue/inputtext";
 import Password from 'primevue/password';
 import Button from 'primevue/button';
 import {Options, Vue} from "vue-class-component";
+import { listTargets } from "@/graphql/queries";
+import { createTarget } from "@/graphql/mutations";
 
 @Options({
   components: {
@@ -80,5 +84,23 @@ export default class App extends Vue {
       console.log(err);
     }
   }
+
+  getTargets = async () => {
+    const targets = await API.graphql(graphqlOperation(listTargets));
+    console.log(targets)
+  }
+
+
+  addTarget = async () => {
+    const target = { name: "my first target", description: "Hello world!" };
+    try {
+      await API.graphql(graphqlOperation(createTarget, {input: target}));
+
+    }
+    catch (err){
+      console.log(err)
+    }
+  }
+
 }
 </script>

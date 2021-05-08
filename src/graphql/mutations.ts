@@ -2,12 +2,12 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const createCategory = /* GraphQL */ `
-  mutation CreateCategory(
-    $input: CreateCategoryInput!
-    $condition: ModelCategoryConditionInput
+export const createTarget = /* GraphQL */ `
+  mutation CreateTarget(
+    $input: CreateTargetInput!
+    $condition: ModelTargetConditionInput
   ) {
-    createCategory(input: $input, condition: $condition) {
+    createTarget(input: $input, condition: $condition) {
       id
       name
       description
@@ -16,12 +16,12 @@ export const createCategory = /* GraphQL */ `
     }
   }
 `;
-export const updateCategory = /* GraphQL */ `
-  mutation UpdateCategory(
-    $input: UpdateCategoryInput!
-    $condition: ModelCategoryConditionInput
+export const updateTarget = /* GraphQL */ `
+  mutation UpdateTarget(
+    $input: UpdateTargetInput!
+    $condition: ModelTargetConditionInput
   ) {
-    updateCategory(input: $input, condition: $condition) {
+    updateTarget(input: $input, condition: $condition) {
       id
       name
       description
@@ -30,12 +30,12 @@ export const updateCategory = /* GraphQL */ `
     }
   }
 `;
-export const deleteCategory = /* GraphQL */ `
-  mutation DeleteCategory(
-    $input: DeleteCategoryInput!
-    $condition: ModelCategoryConditionInput
+export const deleteTarget = /* GraphQL */ `
+  mutation DeleteTarget(
+    $input: DeleteTargetInput!
+    $condition: ModelTargetConditionInput
   ) {
-    deleteCategory(input: $input, condition: $condition) {
+    deleteTarget(input: $input, condition: $condition) {
       id
       name
       description

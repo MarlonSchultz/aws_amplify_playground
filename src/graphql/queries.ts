@@ -2,9 +2,9 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const getCategory = /* GraphQL */ `
-  query GetCategory($id: ID!) {
-    getCategory(id: $id) {
+export const getTarget = /* GraphQL */ `
+  query GetTarget($id: ID!) {
+    getTarget(id: $id) {
       id
       name
       description
@@ -13,13 +13,13 @@ export const getCategory = /* GraphQL */ `
     }
   }
 `;
-export const listCategorys = /* GraphQL */ `
-  query ListCategorys(
-    $filter: ModelCategoryFilterInput
+export const listTargets = /* GraphQL */ `
+  query ListTargets(
+    $filter: ModelTargetFilterInput
     $limit: Int
     $nextToken: String
   ) {
-    listCategorys(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    listTargets(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
         name

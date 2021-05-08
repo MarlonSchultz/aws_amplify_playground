@@ -1,6 +1,6 @@
 projects:
-  imageUploader:
-    schemaPath: src/graphql/schema.json
+  osint:
+    schemaPath: amplify/backend/api/osint/build/schema.graphql
     includes:
       - src/graphql/**/*.ts
     excludes:
@@ -10,6 +10,6 @@ projects:
         codeGenTarget: typescript
         generatedFileName: src/API.ts
         docsFilePath: src/graphql
-extensions:
-  amplify:
-    version: 3
+        region: eu-central-1
+        apiId: null
+        maxDepth: 2

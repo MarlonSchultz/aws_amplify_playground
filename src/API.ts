@@ -2,18 +2,18 @@
 /* eslint-disable */
 //  This file was automatically generated and should not be edited.
 
-export type CreateCategoryInput = {
+export type CreateTargetInput = {
   id?: string | null,
   name: string,
   description?: string | null,
 };
 
-export type ModelCategoryConditionInput = {
+export type ModelTargetConditionInput = {
   name?: ModelStringInput | null,
   description?: ModelStringInput | null,
-  and?: Array< ModelCategoryConditionInput | null > | null,
-  or?: Array< ModelCategoryConditionInput | null > | null,
-  not?: ModelCategoryConditionInput | null,
+  and?: Array< ModelTargetConditionInput | null > | null,
+  or?: Array< ModelTargetConditionInput | null > | null,
+  not?: ModelTargetConditionInput | null,
 };
 
 export type ModelStringInput = {
@@ -56,8 +56,8 @@ export type ModelSizeInput = {
   between?: Array< number | null > | null,
 };
 
-export type Category = {
-  __typename: "Category",
+export type Target = {
+  __typename: "Target",
   id?: string,
   name?: string,
   description?: string | null,
@@ -65,23 +65,23 @@ export type Category = {
   updatedAt?: string,
 };
 
-export type UpdateCategoryInput = {
+export type UpdateTargetInput = {
   id: string,
   name?: string | null,
   description?: string | null,
 };
 
-export type DeleteCategoryInput = {
+export type DeleteTargetInput = {
   id?: string | null,
 };
 
-export type ModelCategoryFilterInput = {
+export type ModelTargetFilterInput = {
   id?: ModelIDInput | null,
   name?: ModelStringInput | null,
   description?: ModelStringInput | null,
-  and?: Array< ModelCategoryFilterInput | null > | null,
-  or?: Array< ModelCategoryFilterInput | null > | null,
-  not?: ModelCategoryFilterInput | null,
+  and?: Array< ModelTargetFilterInput | null > | null,
+  or?: Array< ModelTargetFilterInput | null > | null,
+  not?: ModelTargetFilterInput | null,
 };
 
 export type ModelIDInput = {
@@ -100,20 +100,20 @@ export type ModelIDInput = {
   size?: ModelSizeInput | null,
 };
 
-export type ModelCategoryConnection = {
-  __typename: "ModelCategoryConnection",
-  items?:  Array<Category | null > | null,
+export type ModelTargetConnection = {
+  __typename: "ModelTargetConnection",
+  items?:  Array<Target | null > | null,
   nextToken?: string | null,
 };
 
-export type CreateCategoryMutationVariables = {
-  input?: CreateCategoryInput,
-  condition?: ModelCategoryConditionInput | null,
+export type CreateTargetMutationVariables = {
+  input?: CreateTargetInput,
+  condition?: ModelTargetConditionInput | null,
 };
 
-export type CreateCategoryMutation = {
-  createCategory?:  {
-    __typename: "Category",
+export type CreateTargetMutation = {
+  createTarget?:  {
+    __typename: "Target",
     id: string,
     name: string,
     description?: string | null,
@@ -122,14 +122,14 @@ export type CreateCategoryMutation = {
   } | null,
 };
 
-export type UpdateCategoryMutationVariables = {
-  input?: UpdateCategoryInput,
-  condition?: ModelCategoryConditionInput | null,
+export type UpdateTargetMutationVariables = {
+  input?: UpdateTargetInput,
+  condition?: ModelTargetConditionInput | null,
 };
 
-export type UpdateCategoryMutation = {
-  updateCategory?:  {
-    __typename: "Category",
+export type UpdateTargetMutation = {
+  updateTarget?:  {
+    __typename: "Target",
     id: string,
     name: string,
     description?: string | null,
@@ -138,14 +138,14 @@ export type UpdateCategoryMutation = {
   } | null,
 };
 
-export type DeleteCategoryMutationVariables = {
-  input?: DeleteCategoryInput,
-  condition?: ModelCategoryConditionInput | null,
+export type DeleteTargetMutationVariables = {
+  input?: DeleteTargetInput,
+  condition?: ModelTargetConditionInput | null,
 };
 
-export type DeleteCategoryMutation = {
-  deleteCategory?:  {
-    __typename: "Category",
+export type DeleteTargetMutation = {
+  deleteTarget?:  {
+    __typename: "Target",
     id: string,
     name: string,
     description?: string | null,
@@ -154,13 +154,13 @@ export type DeleteCategoryMutation = {
   } | null,
 };
 
-export type GetCategoryQueryVariables = {
+export type GetTargetQueryVariables = {
   id?: string,
 };
 
-export type GetCategoryQuery = {
-  getCategory?:  {
-    __typename: "Category",
+export type GetTargetQuery = {
+  getTarget?:  {
+    __typename: "Target",
     id: string,
     name: string,
     description?: string | null,
@@ -169,17 +169,17 @@ export type GetCategoryQuery = {
   } | null,
 };
 
-export type ListCategorysQueryVariables = {
-  filter?: ModelCategoryFilterInput | null,
+export type ListTargetsQueryVariables = {
+  filter?: ModelTargetFilterInput | null,
   limit?: number | null,
   nextToken?: string | null,
 };
 
-export type ListCategorysQuery = {
-  listCategorys?:  {
-    __typename: "ModelCategoryConnection",
+export type ListTargetsQuery = {
+  listTargets?:  {
+    __typename: "ModelTargetConnection",
     items?:  Array< {
-      __typename: "Category",
+      __typename: "Target",
       id: string,
       name: string,
       description?: string | null,
@@ -190,9 +190,9 @@ export type ListCategorysQuery = {
   } | null,
 };
 
-export type OnCreateCategorySubscription = {
-  onCreateCategory?:  {
-    __typename: "Category",
+export type OnCreateTargetSubscription = {
+  onCreateTarget?:  {
+    __typename: "Target",
     id: string,
     name: string,
     description?: string | null,
@@ -201,9 +201,9 @@ export type OnCreateCategorySubscription = {
   } | null,
 };
 
-export type OnUpdateCategorySubscription = {
-  onUpdateCategory?:  {
-    __typename: "Category",
+export type OnUpdateTargetSubscription = {
+  onUpdateTarget?:  {
+    __typename: "Target",
     id: string,
     name: string,
     description?: string | null,
@@ -212,9 +212,9 @@ export type OnUpdateCategorySubscription = {
   } | null,
 };
 
-export type OnDeleteCategorySubscription = {
-  onDeleteCategory?:  {
-    __typename: "Category",
+export type OnDeleteTargetSubscription = {
+  onDeleteTarget?:  {
+    __typename: "Target",
     id: string,
     name: string,
     description?: string | null,
